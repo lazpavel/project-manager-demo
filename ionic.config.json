@@ -1,0 +1,7 @@
+{
+  "name": "project-manager-demo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
