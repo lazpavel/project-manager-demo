@@ -1,3 +1,166 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+<amplify-authenticator [formFields]="formFields">
+  <ng-template amplifySlot="header">
+    <div>
+      Menu
+    </div>
+  </ng-template>
+
+  <ng-template amplifySlot="sign-in-header">
+    <h3
+      class="amplify-heading  ion-text-center"
+    >
+      Sign in to your account
+    </h3>
+  </ng-template>
+
+  <ng-template amplifySlot="sign-in-footer">
+    <div class="ion-text-center">
+      <button
+        (click)="authenticator.toForgotPassword()"
+        class="amplify-button amplify-field-group__control"
+        data-fullwidth="false"
+        data-size="small"
+        data-variation="link"
+        type="button"
+      >
+        Reset Password
+      </button>
+    </div>
+  </ng-template>
+
+  <ng-template amplifySlot="sign-up-header">
+    <h3
+      class="amplify-heading ion-text-center"
+    >
+      Create a new account
+    </h3>
+  </ng-template>
+
+  <ng-template amplifySlot="sign-up-footer">
+    <div class="ion-text-center">
+      <button
+        (click)="authenticator.toSignIn()"
+        class="amplify-button amplify-field-group__control"
+        data-fullwidth="false"
+        data-size="small"
+        data-variation="link"
+        type="button"
+      >
+        Back to Sign In
+      </button>
+    </div>
+  </ng-template>
+
+  <ng-template amplifySlot="footer">
+    <div class="ion-text-center ion-padding">
+        © All Rights Reserved
+    </div>
+  </ng-template>
+
+  <ng-template amplifySlot="confirm-sign-up-header">
+    <h3
+      class="amplify-heading"
+    >
+      Enter Information:
+    </h3>
+  </ng-template>
+
+  <ng-template amplifySlot="confirm-sign-up-footer">
+    <div>Footer Information</div>
+  </ng-template>
+
+  <ng-template amplifySlot="setup-totp-header">
+    <h3
+      class="amplify-heading"
+    >
+      Enter Information:
+    </h3>
+  </ng-template>
+
+  <ng-template amplifySlot="setup-totp-footer">
+    <div>Footer Information</div>
+  </ng-template>
+
+  <ng-template amplifySlot="confirm-sign-in-header">
+    <h3
+      class="amplify-heading"
+    >
+      Enter Information:
+    </h3>
+  </ng-template>
+
+  <ng-template amplifySlot="confirm-sign-in-footer">
+    <div>Footer Information</div>
+  </ng-template>
+
+  <ng-template amplifySlot="forgot-password-header">
+    <h3
+      class="amplify-heading"
+    >
+      Enter Information:
+    </h3>
+  </ng-template>
+
+  <ng-template amplifySlot="forgot-password-footer">
+    <div>Footer Information</div>
+  </ng-template>
+
+  <ng-template amplifySlot="confirm-reset-password-header">
+    <h3
+      class="amplify-heading"
+    >
+      Enter Information:
+    </h3>
+  </ng-template>
+
+  <ng-template amplifySlot="confirm-reset-password-footer">
+    <div>Footer Information</div>
+  </ng-template>
+
+  <ng-template
+    amplifySlot="authenticated"
+    let-user="user"
+    let-signOut="signOut"
+  >
+    <ion-menu contentId="main-content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>
+            <ion-menu-button>
+              Menu
+            </ion-menu-button>
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item button [routerLink]="['/projects']">
+            Projects
+          </ion-item>
+          <ion-item button [routerLink]="['/stats']">
+            Stats
+          </ion-item>
+          <ion-item button (click)="signOut()">
+            Log Out
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <div class="ion-page" id="main-content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-menu-button>
+              PM
+            </ion-menu-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-app>
+          <ion-router-outlet></ion-router-outlet>
+        </ion-app>
+      </ion-content>
+    </div>
+  </ng-template>
+</amplify-authenticator>

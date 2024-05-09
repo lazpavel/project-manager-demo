@@ -1,0 +1,16 @@
+<ion-content [fullscreen]="true">
+  <ion-button type="button" expand="block" [routerLink]="['/project-create']">Create Project</ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col>Name</ion-col>
+      <ion-col>Description</ion-col>
+      <ion-col>Status</ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let project of projects">
+      <ion-col [routerLink]="['/projects', project.id]">{{ project.name }}</ion-col>
+      <ion-col>{{ project.description }}</ion-col>
+      <ion-col>{{ project.status }}</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

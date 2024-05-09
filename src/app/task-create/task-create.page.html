@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true">
+  <form [formGroup]="taskForm" (ngSubmit)="createTask()">
+    <ion-list>
+      <ion-item>
+        <ion-input
+          ngDefaultControl
+          label="Title"
+          formControlName="title"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          ngDefaultControl
+          label="Description"
+          formControlName="description"
+        ></ion-input>
+      </ion-item>
+
+      <ion-button type="submit" expand="block">Create</ion-button>
+    </ion-list>
+  </form>
+</ion-content>

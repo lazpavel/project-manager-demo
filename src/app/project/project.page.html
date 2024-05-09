@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>Name: {{ project.name }}</ion-col>
+      <ion-col>Description: {{ project.description }}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-button type="button" expand="block" [routerLink]="['/task-create',project.id]">Create Task</ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col>Title</ion-col>
+      <ion-col>Description</ion-col>
+      <ion-col>Status</ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let task of tasks">
+      <ion-col [routerLink]="['/task', task.id]">{{ task.title }}</ion-col>
+      <ion-col>{{ task.description }}</ion-col>
+      <ion-col>{{ task.status }}</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
