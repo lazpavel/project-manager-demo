@@ -5,6 +5,8 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
+    "clean": "rm -rf www && rm -rf node_modules && rm -rf .angular",
+    "resources:build": "bash ./scripts/build-resources.sh",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",

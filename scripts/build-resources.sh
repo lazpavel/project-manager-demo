@@ -1,0 +1,1 @@
+cd amplify/custom/status-api/lambda/status-lambda && pnpm install && cd -
